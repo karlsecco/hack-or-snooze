@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hack Or Snooze</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<body id="body">
+
+  <!-- NAV -->
+
+  <header id="header" class="container">
+    <nav class="row">
+      <div class="col">
+        <i id="brand" class="front-page fab fa-hacker-news"></i>
+        <a class="front-page" href="#">
+          <strong>Hack Or Snooze</strong>
+        </a>
+        <a id="new" class="front-page" href="#">new</a>
+        <span>|</span>
+        <a id="submit-form" href="#">submit</a>
+        <span>|</span>
+        <a id="posts" href="#">posts</a>
+        <a id="favorites" href="#">
+          <span>|</span>favorites</a>
+        <span class="ml-auto">
+          <a id="profile" class="hidden" href="#">profile</a>
+          <a id="login" data-toggle="modal" data-target="#login-modal" href="#">login</a>
+          <a id="logout" class="hidden" data-toggle="modal" data-target="#login-modal" href="#">
+            <span>|</span>logout</a>
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MODAL -->
+
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+
+          <!-- LOGIN -->
+
+          <form id="login-form" method="POST">
+            <div class="form-group row">
+              <div class="col-md-3"></div>
+              <div class="col-md-7 text-left form-heading">login</div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 form-label text-md-right" for="login-user">username</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" id="login-user" placeholder="enter username" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 form-label text-md-right" for="login-pwd">password</label>
+              <div class="col-md-7">
+                <input type="password" class="form-control" id="login-pwd" placeholder="enter password" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-3"></div>
+              <div class="col-md-7">
+                <button type="submit" id="login-btn" class="btn btn-primary">login</button>
+                <button type="button" id="create-acct" class="btn btn-light">or create an account</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- SIGNUP -->
+
+          <form id="signup-form" class="hidden" method="POST">
+            <div class="form-group row">
+              <div class="col-md-3"></div>
+              <div class="col-md-7 text-left form-heading">create account</div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 form-label text-md-right" for="create-name">name</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" id="create-name" placeholder="enter name" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 form-label text-md-right" for="create-user">username</label>
+              <div class="col-md-7">
+                <input type="text" class="form-control" id="create-user" placeholder="enter username" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 form-label text-md-right" for="create-pwd">password</label>
+              <div class="col-md-7">
+                <input type="password" class="form-control" id="create-pwd" placeholder="enter password" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-3"></div>
+              <div class="col-md-7">
+                <button type="submit" id="signup-btn" class="btn btn-primary">sign-up</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" class="container">
+
+    <!-- SUBMIT -->
+
+    <form id="story-form" class="hidden">
+      <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-5 text-left form-heading">submit link</div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 form-label text-md-right" for="title">title</label>
+        <div class="col-md-5 ">
+          <input type="text" class="form-control" id="title" placeholder="enter title" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 form-label text-md-right" for="title">author</label>
+        <div class="col-md-5 ">
+          <input type="text" class="form-control" id="author" placeholder="enter author of article" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-3 form-label text-md-right" for="url">url</label>
+        <div class="col-md-5 ">
+          <input type="url" class="form-control" id="url" placeholder="enter complete url" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3"></div>
+        <div class="col-md-5 ">
+          <button type="submit" class="btn btn-primary">submit</button>
+        </div>
+      </div>
+    </form>
+
+    <section id="list">
+      <div class "row">
+        <div class="col">
+          <ol>
+            <!-- populate 10 stories here -->
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="favorites-page" class="hidden">
+      <div class "row">
+        <div class="col">
+          <ol>
+            <!-- populate favorites here -->
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="posts-page" class="hidden">
+      <div class "row">
+        <div class="col">
+          <ol>
+            <!-- populate posts here -->
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile-page" class="hidden">
+      <div class "row">
+        <div class="col">
+          <ul>
+            <!-- populate account info here -->
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+  </main>
+
+  <div id="scripts">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script src="functions.js"></script>
+  </div>
+</body>
+
+</html>

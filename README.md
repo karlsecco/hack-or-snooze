@@ -2,7 +2,7 @@
 
 ## Description
 
-- Hacker News/Y Combinator clone for authenticated users to submit, favorite, and delete tech articles
+- Y Combinator Hacker News clone for authenticated users to submit, favorite, and delete tech articles
 - Single-page, JSON Web Token secured app using jQuery/CSS, managing user/story resources via external API (Heroku)
 
 ## Demo
@@ -11,7 +11,9 @@
 
 ![hack-or-snooze demo gif](https://github.com/karlsecco/hack-or-snooze/blob/master/demo.gif?raw=true)
 
-- Hacker News for comparison: [https://news.ycombinator.com/](https://news.ycombinator.com/)
+- Hacker News homepage for comparison: [https://news.ycombinator.com/](https://news.ycombinator.com/)
+
+![hacker news homepage](https://github.com/karlsecco/hack-or-snooze/blob/master/hacker-news.jpg?raw=true)
 
 ## API
 
@@ -28,3 +30,7 @@ git clone https://github.com/karlsecco/hack-or-snooze.git
 ```bash
 open index.html
 ```
+
+## Notes about the author
+
+Karl Secco is a full stack software engineer proficient in React Native, React, Redux, and JavaScript, passionate about creating clean, maintainable code and streamlined user experiences. A graduate of [Rithm School](https://www.rithmschool.com/), Karl most recently fulfilled a React Native (iOS) contract for [Groupmuse](https://www.groupmuse.com/). For more information, please visit [www.karlsecco.com](http://www.karlsecco.com)
